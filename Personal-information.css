@@ -1,0 +1,102 @@
+body{
+    background-color: black;
+}
+#outer{
+    width: 300px;
+    margin: auto;
+    background-color: rgb(69, 79, 77);
+}
+.inner1{
+    padding: 15px
+}
+.inner2{
+    padding: 15px
+}
+.inner3{
+    padding: 15px
+}
+#firstname{
+    background-color: rgb(212, 212, 212);
+    border: none;
+}
+#lastname{
+    background-color: rgb(212, 212, 212);
+    border: none;
+}
+#email{
+    background-color: rgb(212, 212, 212);
+    transform : translateX(20%);
+    border: none;
+}
+.btn1{
+    padding: 10px;
+    transform: translatex(30%);
+}
+.btn2{
+    padding: 10px;
+    transform: translateX(30%);
+}
+#save{
+    padding: 5px;
+    width: 100px;
+    background-color: aqua;
+    border: none;
+    font-weight: 600;
+}
+#save:hover{
+    background-color: rgb(87, 142, 209);
+}
+#cancel:hover{
+    background-color: rgb(87, 142, 209);
+}
+#cancel{
+    padding: 5px;
+    width: 100px;
+    background-color: aqua;
+    border: none;
+    font-weight: 600;
+    
+}
+#file{
+    color : white;
+    transform: translateX(30%);
+    margin-bottom: 10px;
+}
+#delete{
+    transform: translateX(50%);
+    background-color: rgb(130, 126, 126);
+    color: white;
+    margin-bottom: 20px;
+    width: 150px;
+    padding: 10px;
+    border : 1px solid rgb(51, 51, 51);
+    border-radius: 20px;
+    color: black;
+    font-weight: 600;
+}
+.margin{
+    border: 2px solid white;
+    margin: auto;
+    width: 280px;
+    margin-bottom: 10px;
+}
+#image{
+    transform: translateX(20%);
+    border-radius: 50%;
+}
+
+#finalbtn{
+    width: 260px;
+    background-color: cadetblue;
+    padding: 20px;
+    margin-bottom: 5%;
+}
+
+#confirm{
+    width: 100px;
+    background-color: black;
+    padding: 5px;
+    color: white;
+    font-weight: 600;
+    transform: translateX(80%);
+}

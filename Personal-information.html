@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Personal-information.css" />
+</head>
+
+<body>
+   <div id="outer">
+    <h1 style="text-align: center;">USER FORM</h1>
+    <form id="form">
+        <div class="inner1">
+            <label style="color: whitesmoke;">Fisrt Name :</label>
+            <input type="text" placeholder="firstName:'John'" id="firstname" onkeyup="myFunction(this)"/>
+        </div>
+        <div class="inner2">
+            <label style="color: whitesmoke;">Last Name :</label>
+            <input type="text" placeholder="lastName:'Brown'" id="lastname" onkeyup="myFunction(this)" />
+        </div>
+        <div class="inner3">
+            <label style="color: whitesmoke;">Email      :</label>
+            <input type="text" placeholder="Email:'john.brown@gmail.com'" id="email" onkeyup="myFunction(this)" />
+        </div>
+        <div class="btn1">
+            <input type="button" value="save" id="save" disabled="disabled" onclick="saveSubmit()"/>
+        </div>
+        <div class="btn2">
+            <input type="button" value="cancel" id="cancel" disabled="disabled" onclick="cancelSubmit()" />
+        </div>
+        <div class="margin"></div>
+        <div>
+            <input type="file" id="file" accept=".jpg, .jpeg, .png" onchange="loadData(this)" />
+        </div>
+    </form>
+    <img id="image" width="200" />
+    <div>
+        <input type="button" value="delete photo" id="delete" onclick="deleteData()" />
+
+        <div id="finalbtn" style="display: none;">
+            <input type="button" value="confirm" id="confirm" onclick="confirmDelete()"/>
+        </div>
+
+    </div>
+   </div>
+</body>
+<script>
+    var firstname = document.getElementById('firstname').value;
+
+    var lastname = document.getElementById('lastname').value;
+    var email = document.getElementById('email').value;
+
+    function myFunction(firstname, lastname, email){
+        var subBtn1 = document.getElementById("save");
+        var subBtn2 = document.getElementById("cancel");
+
+        if((firstname != "") && (lastname != "") && (email != "")){
+            subBtn1.disabled = false;
+            subBtn2.disabled = false;
+            console.log(false)
+        }
+        else{
+            subBtn1.disabled = true;
+            subBtn2.disabled = true;
+            console.log(true)
+        }
+    }
+
+    function cancelSubmit(){
+        //preventDefault();
+
+       document.getElementById('firstname').value = "";
+       document.getElementById('lastname').value = "";
+       document.getElementById('email').value = "";
+
+        var subBtn1 = document.getElementById('save').disabled = true;
+        var subBtn2 = document.getElementById('cancel').disabled = true;
+    }
+
+
+    function saveSubmit(){
+        alert('Personal details updated');
+
+        document.getElementById('firstname').value = "";
+       document.getElementById('lastname').value = "";
+       document.getElementById('email').value = "";
+
+        var subBtn1 = document.getElementById('save').disabled = true;
+        var subBtn2 = document.getElementById('cancel').disabled = true;
+
+    }
+
+    var loadData = function(e){
+        var image = document.getElementById('image');
+        image.src = URL.createObjectURL(event.target.files[0]);
+
+    }
+
+    function deleteData(){
+
+        var confirmBtn = document.getElementById("finalbtn").style.display='block'
+        document.getElementById('delete').style.display='none'
+    }
+    function confirmDelete(){
+        var image = document.getElementById('image');
+        image.src = ""
+        document.getElementById('finalbtn').style.display='none';
+        document.getElementById('delete').style.display='block'
+    }
+
+
+</script>
+</html>
